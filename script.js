@@ -120,4 +120,3 @@ function resumeSound() {
   const weatherSound = document.getElementById("weather-sound");
   weatherSound.play();
 }
-
