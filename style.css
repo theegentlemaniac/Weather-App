@@ -1,0 +1,268 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+body{
+
+    /*background-color: #8C52FF;
+    background-image: url(GduyezDXIAAY3jR.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#audio-container {
+    margin-top: 20px;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+
+}
+
+#audio-container button {
+    background-color: #8b48d7;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+    transition: background-color 0.3s;
+  
+}
+
+
+
+
+
+#audio-container button, .sound-icon{
+    margin: 0 10px;
+}
+
+#audio-container button:hover {
+    background-color: #debff4;
+    color: #000;
+}
+
+#audio-container p {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+#weather-container {
+    background: rgba(255,255,255,0.3);
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px rgba (0,0,0,0.1);
+    backdrop-filter: blur(13px);
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+
+}
+
+#weather-container label, h2, p{
+    font-size: 16px;
+    margin-bottom: auto;
+}
+
+#temp-div p{
+    font-size: 50px;
+}
+
+
+#weather-container #weather-icon{
+    width: 130px;
+    height: 130px;
+}
+
+
+
+#weather-container #temp-div p{
+    font-size: 50px;
+}
+
+.sound-icon {
+    display: inline-block; /* Ensures it's block-level and easily styled */
+    width: 50px;           /* Width of the sound icon */
+    height: 50px;          /* Height of the sound icon */
+    background-color: #f0f0f0; /* Background color of the icon container */
+    border-radius: 50%;    /* Makes it circular */
+    text-align:center; /* Centers the content horizontally */
+    line-height: 55px;     /* Centers the content vertically */
+    cursor: pointer;       /* Changes cursor to pointer on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    order: 2;
+}
+
+.sound-icon:hover {
+    transform: scale(1.1); /* Makes the icon grow slightly on hover */
+    background-color: #8b48d7; /* Changes the background color on hover */
+}
+
+.sound-icon i {
+    font-size: 24px;        /* Adjusts the size of the font-awesome icon */
+    color: #333;            /* Sets the icon color */
+}
+
+.sound-icon i:hover {
+    color: #000;            /* Changes the color of the icon on hover */
+}
+
+
+
+
+h2, label, p{
+    color: #fff;
+    margin: 8px 0;
+    font: 14px;
+}
+
+h2:hover{
+    color: #8b48d7;
+}
+
+input{
+    width: calc(100% - 16px);
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+button {
+    position: relative;
+    background: #debff4; /* Initial background color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 12px;
+    overflow: hidden; /* Ensures the pseudo-element doesn't spill out */
+    z-index: 1;
+    margin-top: 10px;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 300%; /* Extend height beyond the button */
+    background: #8b48d7; /* Hover color */
+    transform: translate(-50%, -50%);
+    transition: width 0.9s ease; /* Smooth transition effect */
+    z-index: -1; /* Ensure the pseudo-element stays behind the text */
+}
+
+button:hover::before {
+    width: 150%; /* Expands to fill from center outward */
+}
+
+button:hover {
+    color: white; /* Ensures text remains visible on hover */
+}
+
+
+#temp-div p{
+    font-size: 60px;
+    margin-top: -30px;
+}
+
+#weather-info
+{
+    margin-right: auto;
+    font-size: 20px;
+}
+
+#weather-icon{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+    margin-bottom: 0;
+    display: none;
+}
+
+#hourly-forecast{
+    margin-top: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hourly-item img{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+#hourly-heading {
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Video background */
+#weather-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the screen */
+    z-index: -1; /* Sends the video behind the content */
+}
+
+/* Overlay to enhance readability */
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay */
+    z-index: 0; /* Behind the weather container but above the video */
+}
+
+#weather-container {
+    position: relative;
+    z-index: 1; /* Content stays on top of the video */
+}
+
